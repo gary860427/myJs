@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0618</title>
+</head>
+
+<body>
+    <!-- 雙引號字串裡面就不能包雙引號 要換單引號 反之亦然 -->
+    <!-- alert():訊息視窗 -->
+    <!-- onClick => 左鍵點擊一下的事件行為 --> 
+    <!-- 任一個事件行為下可以直接使用js -->
+    <button onclick="alert('你好我好大家好');">你好</button>
+    <button onclick="javascript:alert('現在我有冰淇淋');">早上好中國</button>
+    <!-- 使用超連結時js的前綴字要打出來(javascript:) -->
+    <a href="javascript:alert('嗨嗨嗨嗨');">嗨</a>
+
+
+    <script>
+        console.log(123);
+        console.log(456);
+        // 自行撰寫js在目前檔案中
+        // document.write可以顯示在網頁上 
+        document.write('Hello');
+    </script>
+
+    <!-- ./=載入專案中的外部檔案 -->
+    <script src="./js/js0618-1.js"></script>
+
+    <!-- ../=從裡面往外尋找專案中的外部檔案，多一層多一個../ -->
+    <!-- <script src="../../js0618-1.js"></script> -->
+
+    <!-- 載入模組化的檔案 -->
+    <!-- <script type="module" src=""></script> -->
+</body>
+
+</html>
