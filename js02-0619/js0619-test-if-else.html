@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0619隨堂考</title>
+</head>
+
+<body>
+    <!--計算BMI-->
+    <!--BMI= 體重/身高(m)的平方-->
+    <!--BMI值取到小數點第二位-->
+    <script>
+        let h = "1.73";
+        console.log(`身高:${h} m`);
+        let w = "120";
+        console.log(`體重:${w} kg`);
+        let BMI; //建立BMI
+        BMI = w / (h * h);
+        console.log(`BMI:${BMI.toFixed(2)}`) //取出小數點兩位
+        BMI = Number(BMI); //將其數值化
+        console.log(typeof (BMI));
+
+        //檢查BMI落在哪個區間並顯示訊息結果
+        //檢查BMI<18.5
+        if (BMI < 18.5) {
+            //檢查條件成立
+            console.log('多吃點')
+        } else {
+            //區間資料使用交集邏輯運算子&&(AND)
+            //檢查18.5<=BMI<24
+            if (BMI >= 18.5 && BMI < 24) {
+                console.log('體重正常')
+            } else {
+                //檢查BMI>=24
+                if (BMI >= 24 && BMI < 27) {
+                    console.log('異常範圍:過重')
+                } else {
+                    if (BMI >= 27 && BMI < 30) {
+                        console.log('異常範圍:輕度肥胖')
+                    } else {
+                        if (BMI >= 30 && BMI < 35) {
+                            console.log('異常範圍:中度肥胖')
+                        } else {
+                            if (BMI >= 35) {
+                                console.log('你胖死了')
+
+                            }
+                        }
+
+
+                    }
+                }
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

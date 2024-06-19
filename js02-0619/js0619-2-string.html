@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js0619-2-string</title>
+</head>
+
+<body>
+    <!--駝峰式命名-->
+    <!--大駝峰:每個單字字首大寫-->
+    <!--小駝峰:第二個單字字首大寫-->
+    <!--字串變數-->
+    <script>
+        let petName = "叉燒"
+        console.log(`寵物名稱:${petName}`);
+        let petAge = 7;
+        console.log(`寵物年紀:${petAge}歲`);
+        petAge = "7";
+        //取得資料型態 => typeof(變數名)
+        console.log(typeof (petAge));
+        //未轉換為數值
+        console.log(`寵物5年後年齡:${petAge + 5}歲`);
+        //已暫時轉換為數值  
+        console.log(`寵物5年後年齡:${Number(petAge) + 5}歲`);
+        console.log(typeof (petAge));
+        //真正持續要字串轉數值，需重新指派轉換結果給原來的變數
+        petAge = Number(petAge);
+        console.log(`寵物5年後年齡:${petAge + 5}歲`);
+        console.log(typeof (petAge));
+
+        //帶有小數點的資料=>浮點數
+        //字串是黑色 數值是藍色
+        let a = 6.584;
+        let r = 7;
+        let area = a * r * r;
+        console.log(area);
+        console.log(parseInt(area)); // parseInt() => 取整數(無條件捨去到整數位)
+        console.log(area.toFixed(2)); //取出小數點兩位，回傳型態為字串
+        console.log(Number(area.toFixed(2)) + 2); //若要運算，必須用Number()轉換
+    </script>
+</body>
+
+</html>
