@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測驗</title>
+</head>
+
+<body>
+    <script>
+        //使用輸入視窗
+        //輸入分數
+        //1.檢查是否及格
+        //2.檢查是否為有效分數範圍
+        //3.檢查是否按了取消
+        let score;
+        score = window.prompt('請輸入成績');
+        if (score == null) {
+            window.alert('取消');
+        } else {
+            score = Number(score);
+            if (score == " ") {
+                window.alert('請勿空白');
+            } else if (score >= 60 && score <= 100) {
+                window.alert('成績為' + score + '及格!');
+            } else if (score >= 0 && score <= 60) {
+                window.alert('成績為' + score + '不及格!');
+            }
+            else {
+                window.alert('無效分數');
+            }
+        }
+        //以下老師解答
+        //let score;
+        //score = prompt('請輸入分數','60')
+        //if(score == null){
+        //  console.log('你按了取消');
+        //}else{
+        //  score = Number(score);
+        //  console.log(score);
+        //  檢查是否為非數值的字串轉換後為NaN
+        //  if (isNaN(score)){console.log('輸入的分數err')}
+        //  else {
+        //if (score <0 || score > 100){
+        //      console.log(score + '不是有效的分數範圍')}
+        //  else{
+        //  if(score>=60){
+        //      console.log("及格")}
+        //  else{
+        //  console.log("不及格")}}}
+
+    </script>
+
+
+</body>
+
+</html>
