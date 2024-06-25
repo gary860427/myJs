@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //血型判斷(注意大小寫)
+        //A=>A型
+        //a=>A型
+        //if - else - if
+        // 變數名.toUpperCase(); =>轉大寫
+        // 變數名.toLowerCase(); =>轉小寫
+
+        let blood;
+        blood = window.prompt('請輸入血型=>使用if-else-if');
+        //blood.toUpperCase();
+        //blood2 = blood.trim(); //去除多餘的空白，再重新指派回blood變數
+        //console.log(blood.toUpperCase());
+        if (blood == null) {
+            document.write('取消')
+        } else {
+            //按了確定
+            //1.去除空白
+            //2.轉大寫
+
+            blood = blood.trim().toUpperCase();
+
+            //檢查血型代號
+            if (blood == '') {
+                document.write('未輸入血型')
+            } else if (blood == "A" || blood == "a") {
+                document.write('A型');
+            } else if (blood == "B" || blood == "b") {
+                document.write('B型');
+            } else if (blood == "O" || blood == "o") {
+                document.write('O型');
+            } else if (blood == "AB" || blood == "Ab" || blood == "aB" || blood == "ab") {
+                document.write('AB型');
+            } else {
+                document.write('血型代號錯誤')
+            }
+        }
+        //換行
+        document.write('<br>');
+        //switch
+        let blood2 = prompt('請輸入血型=>使用switch');
+        if (blood2 == null) { //是否按了取消
+            document.write('取消');
+        } else {
+            //按了正確
+            switch (blood2.trim().toLowerCase()) {
+                case '':
+                    document.write('未輸入血型');
+                    break;
+                case 'a':
+                    document.write('A型');
+                    break;
+                case 'b':
+                    document.write('B型');
+                    break;
+                case 'o':
+                    document.write('A型');
+                    break;
+                case 'ab':
+                    document.write('AB型');
+                    break;
+                default:
+                    document.write('代碼錯誤')
+
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
