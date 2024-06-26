@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ex7:
+        // 彈出輸入視窗 => prompt()
+        // 輸入運算起始值
+        // 輸入運算結束值
+        //算出奇數和
+        //算出偶數和
+
+        /* 
+        我的答案
+        let a = '';
+        let b = '';
+        let t = 0;
+        let tot = 0;
+
+        a = window.prompt('請輸入起始值');
+        b = window.prompt('請輸入結束值');
+
+        if (a === null || b === null) {
+            document.write('無效')
+        } else {
+            a = Number(a)
+            b = Number(b)
+            for (let i = a; i <= b; i++) {
+                if (i % 2 === 0) {
+                    t = t + i;
+                } else if (i % 2 != 0) {
+                    tot = tot + i;
+                }
+            }
+            document.write(`偶數和=${t}`);
+            document.write('<br>');
+            document.write(`奇數和=${tot}`);
+        }
+            */
+
+        //老師解答
+        let sNum = prompt('起始值');
+        sNum = Number(sNum);
+        let eNum = prompt('結束值');
+        eNum = Number(eNum);
+
+        //情況2.起<結束
+        if (sNum > eNum) {
+            let tmp = sNum; //大的暫時給tmp
+            sNum = eNum;    //小的給sNum
+            eNum = tmp;     //大的給sNum
+        }
+        //奇數和
+        let tot1 = 0;
+        //偶數和
+        let tot2 = 0;
+
+
+        for (let i = sNum; i <= eNum; i++) {
+            //奇數
+            if (i % 2 === 1) {
+                //奇數
+                tot1 = tot1 + i;
+            } else {
+                //偶數
+                tot2 = tot2 + i;
+            }
+        }
+        console.log(`${sNum}-${eNum}的奇數和=>${tot1}`)
+        console.log(`${sNum}-${eNum}的偶數和=>${tot2}`)
+
+    </script>
+</body>
+
+</html>

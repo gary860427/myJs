@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ex5:請用一個迴圈，找出1-10中，迴圈結束後才顯示結果=>3的倍數跟5的倍數
+        //建立一個存放3的倍數的變數
+        //1-10中3的倍數的合計為
+        //建立一個存放5的倍數的變數
+        //寫迴圈找出3跟5的倍數
+        //1-10中5的倍數的合計為
+        let str3 = ""; //連續兩個單引號或雙引號，表示空字串(無空白)
+        let str5 = "";
+        let str3a = ""; //存放3的倍數(帶有+號)
+        let str5a = ""; //存放5的倍數(帶有+號)
+        let tot3 = 0;   //存放3的倍數合計
+        let tot5 = 0;   //存放5的倍數合計
+
+        for (let i = 1; i <= 10; i++) {
+            document.write(i + ' ')
+            if (i % 3 === 0) {
+                //個別保存起來(串接)
+                //str3 = str3 + i+' '; //""+3="3"
+                str3 += i + ' '; //簡化程式
+                str3a = str3a + i; //個別保存3+6+9
+                if (i != 9) {
+                    str3a = str3a + '+'; //不是9的時候，才加上+
+                }
+                //累計3的倍數
+                tot3 = tot3 + i;
+
+                /*
+                    i=3 => tot3=tot3+i=0+3=3
+                    i=6 => tot3=tot3+i=3+6=9
+                    i=9 => tot3=tot3+i=9+9=18
+                */
+            } else if (i % 5 === 0) {
+                //個別保存起來(串接)
+                //str5 =str5 + i+' ';
+                str5 += i + ' ';
+                str5a = str5a + i; //個別保存5+10
+                if (i != 10) {
+                    str5a = str5a + '+'; //不是10的時候，才加上+
+                }
+                //累計5的倍數
+                tot5 = tot5 + i;
+            }
+        }
+        //迴圈結束後再顯示結果
+        //反引號(``)中的變數要用${變數名}包起來
+        document.write('<br>');
+        document.write(`1-10中3的倍數=${str3}=`); //字串字面值寫法
+        document.write('<br>');
+        document.write(`1-10中3的倍數合計=${str5a}=${tot3}`);
+        document.write('<br>');
+        document.write(`1-10中5的倍數=${str5}`);
+        document.write('<br>');
+        document.write('1-10中5的倍數=' + str5 + "<br>"); //一般串接方式，使用雙引號或單引號串接
+        document.write(`1-10中3的倍數合計=${str5a}=${tot5}`);
+    </script>
+</body>
+
+</html>
