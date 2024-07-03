@@ -1,0 +1,6 @@
+C, C++, C#, Java, PHP
+T-SQL
+SELECT
+ORDER BY
+GROUP BY
+WHERE

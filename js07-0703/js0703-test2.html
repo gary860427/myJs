@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課堂作業</title>
+</head>
+
+<body>
+    <script>
+        //寫一個函式
+        //請輸入成績N次，直到輸入-1或取消就結束
+        /* 
+            第1次分數:90
+            第2次分數:60
+            第3次分數:50
+            第4次分數:-1
+            -------------
+            及格人數:2人
+            不及格人數:1人
+                總分:200分
+            總平均:66.67分
+        */
+        let i = 0;
+        let save = 0;
+        let nsave = 0;
+        let tot = 0;
+        let avg;
+        for (i = 1; ; i++) {
+            let score = prompt('請輸入成績');
+            /* score = Number(score) */
+            if (score >= 60 && score <= 100) {
+                save = save + 1;
+            } else if (score < 60 && score >= 0) {
+                nsave = nsave + 1;
+            } else if (score > 100 || score <= -2) {
+                avg = Number(i) - 1;
+                alert('無效成績');
+                break;
+            }
+            avg = Number(i) - 1;
+            if (score === '-1' || score === '取消' || score === null) {
+                break;
+            }
+            document.write(`第${i}次:${score}分<br>`);
+            tot = Number(tot) + Number(score);
+        }
+        document.write('<hr>');
+        document.write(`及格人數:${save}人<br>`);
+        document.write(`不及格人數:${nsave}人<br>`);
+        document.write(`總分為${tot}分<br>`);
+        document.write(`平均為${(tot / avg).toFixed(2)}分`);
+    </script>
+</body>
+
+</html>

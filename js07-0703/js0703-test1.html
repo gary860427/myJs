@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //請設計一個函數可以四則運算
+
+        function calc(a, b, c) {
+            //處理四則運算的結果
+            if (c == '+') {
+                document.write(`${a}+${b}=${a + b}`);
+            } else if (c == '-') {
+                document.write(`${a}-${b}=${a - b}`);
+            } else if (c == '+') {
+                document.write(`${a}+${b}=${a * b}`);
+            } else if (c == '/') {
+                document.write(`${a}/${b}=${(a / b).toFixed(2)}`);
+            } else {
+                document.write('運算符號不存在');
+            }
+        }
+        //使用輸入視窗產生任意二數與運算式符號
+        //最後再呼叫函式
+        //處理排除下列狀況
+        //1.非數字      =>  isNaN()
+        //2.多餘空白    =>  trim()
+        //3.取消狀況    =>  null
+        /*         let inputA = Number(prompt('請輸入第一個數字'));
+                let inputB = Number(prompt('請輸入第二個數字')); */
+        let inputA = prompt('請輸入第一個數字');
+        let inputB = prompt('請輸入第二個數字');
+        let inputC = prompt('請輸入運算符號(+-/*)');
+
+        if (inputA == null || inputB == null || inputC == null) {
+            document.write('已取消');
+        } else if (isNaN(inputA) || isNaN(inputB)) {
+            //isNaN => is Not a Number
+            document.write('請輸入數字');
+        } else {
+            //去除多餘空白 => 字串.trim() => 字與字之間的空白不會被刪除
+            //字串轉數值 => Number(字串)
+            inputA = Number(inputA.trim());
+            inputB = Number(inputB.trim());
+            //最後再呼叫函式
+            calc(inputA, inputB, inputC);
+        }
+    </script>
+</body>
+
+</html>
