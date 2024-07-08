@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <button onclick="playGame();">猜數字開始</button>
     <script>
         //猜數字:直到猜到才結束
         //用亂數產生一個值
@@ -17,8 +20,23 @@
         //第5次:60 => 猜對了
 
         // console.log(Math.floor(Math.random()*100)); //回傳0~99
-        console.log(Math.floor(Math.random()*100)+1); //回傳1~100
+        //console.log(Math.floor(Math.random()*100)+1); //回傳1~100
+
+        function playGame() {
+            let bingoNum = Math.floor(Math.random() * 100 + 1);
+            alert(bingoNum);
+
+            while (true) {
+                let keyinNum = prompt("請輸入數字");
+                alert(keyinNum);
+
+                if (keyinNum == bingoNum) {
+                    break;
+                }
+            }
+        }
 
     </script>
 </body>
+
 </html>
