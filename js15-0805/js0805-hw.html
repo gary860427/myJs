@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .warp {
+            margin-top: 100px;
+            margin-left: 50px;
+        }
+
+        ul {
+            width: 250px;
+        }
+
+        ul li {
+            position: relative;
+            padding: 12px 8px;
+            list-style: none;
+        }
+
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 12px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="warp">
+
+        <form action="">
+            <input type="text" id="myInput">
+            <input type="button" value="加入" id="btn">
+            <input type="button" value="刪除第一個" id="btn2">
+        </form>
+
+        <ul id="myUL">
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+
+    </div>
+
+    <script>
+        // 函數：為刪除按鈕添加事件監聽器
+        function addCloseButton(li) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("X");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            // 點擊“X”按鈕刪除該行
+            span.addEventListener('click', function () {
+                li.remove();
+            });
+        }
+
+        // 初始化已有列表項
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            addCloseButton(myNodelist[i]);
+        }
+
+        // 刪除第一個li
+        var btn2 = document.getElementById('btn2');
+        btn2.addEventListener('click', () => {
+            // 取得第一個li
+            let removeElm = document.getElementsByTagName('li')[0];
+            // 找到父元素節點
+            let parentElm = removeElm.parentNode;
+            // 從父元素移除第一個li子節點
+            parentElm.removeChild(removeElm);
+        });
+
+        // 取得加入按鈕事件
+        let myBtn = document.querySelector('#btn');
+        myBtn.addEventListener('click', () => {
+
+            // 新增li元素
+            var li = document.createElement("li");
+            // 取得文字方塊的內容
+            var inputValue = document.getElementById("myInput").value;
+            // 新增文字節點
+            var t = document.createTextNode(inputValue);
+            // 將文字節點加入到新節點li
+            li.appendChild(t);
+            // 檢查文字方塊是否有內容
+            if (inputValue.trim() === '') {
+                alert("文字方塊不能有空白!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+                // 為新加入的li添加刪除按鈕
+                addCloseButton(li);
+            }
+
+            // 清空文字方塊
+            document.getElementById("myInput").value = "";
+        });
+
+    </script>
+</body>
+
+</html>
