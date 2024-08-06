@@ -63,7 +63,7 @@
     </div>
 
     <script>
-        //新增li項目後，新增刪除文件
+        //針對現有的li項目，新增刪除文字
         var myNodelist = document.getElementsByTagName("LI");
         var i;
         for (i = 0; i < myNodelist.length; i++) {
@@ -84,7 +84,7 @@
         //     parentElm.removeChild(removeElm);
         // });
 
-        // 按下X，刪除對應的li
+        // 現有的li按下X，刪除對應的li
         var close = document.getElementsByClassName('close');
         for (i = 0; i < close.length; i++) {
             close[i].onclick = function () {
@@ -140,14 +140,9 @@
 
                 // 新增刪除動作
                 span.onclick = function () {
-                    // 函式名稱
-                    delLi();
+                    var curLi = this.parentNode;
+                    curLi.style.display = 'none';
                 }
-            }
-
-            function delLi() {
-                var curLi = this.parentNode;
-                curLi.style.display = 'none';
             }
 
             document.getElementById("myInput").value = "";
