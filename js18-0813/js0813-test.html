@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .big {
+            margin: 0 auto; /* 移除額外的間距 */
+            width: 800px;
+            height: 700px;
+            border: solid 1px #000;
+            overflow: hidden;
+        }
+
+        #bigImg{
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 確保圖片填滿容器並保持比例 */
+        }
+
+        .wrapper {
+            display: flex;
+            margin: 10px auto;
+            padding: 0 10px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrapper img {
+            padding: 0 10px;
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 換圖效果 -->
+    <div class="big">
+        <img id="bigImg" src="./pic5.jpg" alt="">
+    </div>
+    <div class="wrapper">
+        <div>
+            <img onclick="swap('./pic5.jpg');" class="pic1" src="./pic5.jpg" alt="">
+            <img onclick="swap('./pic2.jpg');" class="pic2" src="./pic2.jpg" alt="">
+            <img onclick="swap('./pic3.jpg');" class="pic3" src="./pic3.jpg" alt="">
+            <img onclick="swap('./pic4.jpg');" class="pic4" src="./pic4.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        function swap(picSrc){
+            let bigImg = document.getElementById('bigImg');
+            bigImg.src = picSrc;
+        }
+        // let bigImg = document.getElementById('bigImg');
+
+        // function changePic1() {
+        //     bigImg.src = './pic5.jpg';
+        // }
+
+        // function changePic2() {
+        //     bigImg.src = './pic2.jpg';
+        // }
+
+        // function changePic3() {
+        //     bigImg.src = './pic3.jpg';
+        // }
+
+        // function changePic4() {
+        //     bigImg.src = './pic4.jpg';
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            margin: 100px;
+        }
+
+        img {
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 換圖效果 -->
+    <div class="wrap">
+        <div>
+            <img onmouseover="changePic();" onmouseout="restorePic()" id="pic" src="./pic1.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        // 換圖
+        function changePic() {
+            // 取得換圖的目標
+            let pic = document.getElementById('pic');
+            // 換圖
+            pic.src = './pic2.jpg';
+        }
+
+        // 還原 
+        function restorePic() {
+            // 取得換圖的目標
+            let pic = document.getElementById('pic');
+            // 換圖
+            // pic.src = '';  // 圖片不可以這要寫，否則會破圖
+            pic.src = './pic1.jpg';
+
+        }
+    </script>
+</body>
+
+</html>
