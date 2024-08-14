@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表單事件</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="web">請選擇網站</label>
+        <select name="" id="web">
+            <option value="">請選擇</option>
+            <option id="btnG" value="google">Google</option>
+            <option id="btnF" value="face">Facebook</option>
+            <option id="btnI" value="instag">Instagram</option>
+        </select>
+    </form>
+
+    <script>
+        document.getElementById('web').addEventListener('change', function () {
+            let selectedValue = document.getElementById('web').value;
+            if (selectedValue) {
+                openNewWindow(selectedValue);
+            }
+        });
+
+        function openNewWindow(value) {
+            let url;
+            switch (value) {
+                case 'google':
+                    url = 'https://www.google.com';
+                    break;
+                case 'face':
+                    url = 'https://www.facebook.com';
+                    break;
+                case 'instag':
+                    url = 'https://www.instagram.com';
+                    break;
+            }
+
+            window.open(url, 'goCon', 'height=400, width=400');
+        }
+    </script>
+</body>
+
+</html>
